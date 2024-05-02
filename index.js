@@ -14,5 +14,22 @@ kelvin.addEventListener('change', updateTemp);
 fahrenheit.addEventListener('change', updateTemp);
 
 function updateTemp(e) {
-  console.log(e.target.id);
+  const currentTempValue = +e.target.value;
+
+  switch (e.target.id) {
+    case 'celsius':
+      kelvin.value = (currentTempValue + 273.32).toFixed(2);
+      fahrenheit.value = (currentTempValue * 1.8 + 32).toFixed(2);
+      break;
+    case 'fahrenheit':
+      celsius.value = ((currentTempValue - 32) / 1.8).toFixed(2);
+      kelvin.value = ((currentTempValue - 32) / 1.8 + 273.32).toFixed(2);
+      break;
+    case 'kelvin':
+      celsius.value = (currentTempValue - 273.32).toFixed(2);
+      fahrenheit.value = ((currentTempValue - 273.32) * 1.8 + 32).toFixed(2);
+      break;
+    default:
+      break;
+  }
 }
