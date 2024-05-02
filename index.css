@@ -12,7 +12,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: hsl(0, 0%, 70%);
+  background: linear-gradient(to bottom, white, grey);
   color: black;
 }
 header,
@@ -28,7 +28,6 @@ header {
   text-align: center;
   justify-content: center;
   align-items: center;
-  text-wrap: nowrap;
 }
 main {
   flex: 1;
@@ -83,14 +82,28 @@ footer .contact-icons {
   padding: 20px;
   border-radius: 5px;
   width: 400px;
+  background: linear-gradient(to right top, white, grey);
 }
 #container input {
-  min-width: 100%;
+  width: 100%;
   padding: 10px 15px;
   font-size: 1.2rem;
   font-weight: 550;
-  color: hsla(0, 0%, 30%);
+  color: hsla(9, 100%, 64%, 0.6);
   border: none;
-  outline: 1px solid hsla(0, 0%, 30%);
   border-radius: 10px;
+}
+
+#container input:focus {
+  outline: 1px solid hsla(0, 0%, 30%);
+}
+#container input::placeholder {
+  opacity: 0.6;
+  color: hsla(0, 0%, 50%);
+}
+
+@media screen and (max-width: 465px) {
+  #container {
+    max-width: 95%;
+  }
 }
